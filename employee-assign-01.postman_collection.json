@@ -1,0 +1,68 @@
+{
+  "info": {
+    "name": "employee-assign-01",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Employee (Aarav Sharma)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "{{baseUrl}}/api/employees", "host": ["{{baseUrl}}"], "path": ["api","employees"] },
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"Aarav Sharma\",\n  \"email\": \"aarav.sharma@example.com\",\n  \"phone\": \"9876543210\"\n}" }
+      }
+    },
+    {
+      "name": "Get by Email - Specifications",
+      "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/employees/email/aarav.sharma@example.com/specifications", "host": ["{{baseUrl}}"], "path": ["api","employees","email","aarav.sharma@example.com","specifications"] } }
+    },
+    {
+      "name": "Get by Email - HQL",
+      "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/employees/email/aarav.sharma@example.com/hql", "host": ["{{baseUrl}}"], "path": ["api","employees","email","aarav.sharma@example.com","hql"] } }
+    },
+    {
+      "name": "Get by Email - Native",
+      "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/employees/email/aarav.sharma@example.com/native", "host": ["{{baseUrl}}"], "path": ["api","employees","email","aarav.sharma@example.com","native"] } }
+    },
+    {
+      "name": "Get by Name - Specifications",
+      "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/employees/name/Aarav Sharma/specifications", "host": ["{{baseUrl}}"], "path": ["api","employees","name","Aarav Sharma","specifications"] } }
+    },
+    {
+      "name": "Get by Name - HQL",
+      "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/employees/name/Aarav Sharma/hql", "host": ["{{baseUrl}}"], "path": ["api","employees","name","Aarav Sharma","hql"] } }
+    },
+    {
+      "name": "Get by Name - Native",
+      "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/employees/name/Aarav Sharma/native", "host": ["{{baseUrl}}"], "path": ["api","employees","name","Aarav Sharma","native"] } }
+    },
+    {
+      "name": "Update Employee (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/api/employees/aarav.sharma@example.com", "host": ["{{baseUrl}}"], "path": ["api","employees","aarav.sharma@example.com"] },
+        "body": { "mode": "raw", "raw": "{\n  \"lastName\": \"Smith\",\n  \"phone\": \"9998887777\",\n  \"address\": \"456 Oak Ave\"\n}" }
+      }
+    },
+    {
+      "name": "Update Phone (PATCH)",
+      "request": {
+        "method": "PATCH",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "{{baseUrl}}/api/employees/aarav.sharma@example.com/phone", "host": ["{{baseUrl}}"], "path": ["api","employees","aarav.sharma@example.com","phone"] },
+        "body": { "mode": "raw", "raw": "{\n  \"phone\": \"1112223333\"\n}" }
+      }
+    },
+    {
+      "name": "Delete by Email",
+      "request": { "method": "DELETE", "url": { "raw": "{{baseUrl}}/api/employees/aarav.sharma@example.com", "host": ["{{baseUrl}}"], "path": ["api","employees","aarav.sharma@example.com"] } }
+    }
+  ],
+  "variable": [ { "key": "baseUrl", "value": "http://localhost:8080" } ]
+}
+
+
